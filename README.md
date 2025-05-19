@@ -135,3 +135,12 @@ For any issues or contributions, feel free to open an issue or pull request.
 ---
 
 **Screenshots:**
+![Mainpage](https://github.com/user-attachments/assets/46aa58c9-ed69-4ecf-bfe1-5f09e67897f3)
+![addpatient](https://github.com/user-attachments/assets/888dc8c9-2af0-42c8-b9bf-04865aaf00ac)
+![CustomEmailSending](https://github.com/user-attachments/assets/c6b8989d-9010-4cdc-bc7e-44c96fcabd65)
+![Email_googlemeet](https://github.com/user-attachments/assets/e895d38f-0a4b-438a-ad9c-8f82ef8899c9)
+![customemail](https://github.com/user-attachments/assets/6bb5d4a6-8158-4d2e-8b52-06e795ee8688)
+
+
+
+
