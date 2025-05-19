@@ -1,0 +1,113 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #ffeef5;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  padding: 40px 16px;
+}
+
+.card {
+  background-color: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(255, 192, 203, 0.3);
+  width: 100%;
+  max-width: 550px;
+  border: 1px solid #ffc0cb;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.header h2 {
+  color: #d63384;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.back-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-right: 10px;
+  color: #d63384;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 14px;
+  color: #880e4f;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+input,
+select,
+textarea {
+  padding: 10px;
+  border: 1px solid #f8bbd0;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: 0.3s border ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #ec407a;
+}
+
+textarea {
+  resize: none;
+}
+
+.submit-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background-color: #ec407a;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #d81b60;
+}
+
+.submit-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.icon {
+  color: #ec407a;
+}

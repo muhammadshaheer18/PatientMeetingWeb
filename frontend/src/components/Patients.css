@@ -1,0 +1,72 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #ffeef5;
+}
+
+.patients-container {
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  color: #d63384;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 24px;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  width: 100%;
+  max-width: 1100px;
+}
+
+.patients-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  box-shadow: 0 4px 10px rgba(255, 192, 203, 0.3);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.patients-table thead {
+  background-color: #f8bbd0;
+  color: #880e4f;
+}
+
+.patients-table th,
+.patients-table td {
+  padding: 14px 12px;
+  text-align: left;
+  border-bottom: 1px solid #ffe0ec;
+}
+
+.patients-table tbody tr:hover {
+  background-color: #fff0f5;
+}
+
+.profile-img {
+  width: 100px;
+  height: auto;
+  border-radius: 8px;
+  border: 2px solid #f8bbd0;
+}
+
+.action-btn {
+  background-color: #ec407a;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.action-btn:hover {
+  background-color: #d81b60;
+}

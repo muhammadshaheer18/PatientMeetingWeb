@@ -1,0 +1,77 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fff0f7;
+}
+
+.prompt-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+.prompt-card {
+  background-color: white;
+  padding: 32px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(255, 105, 135, 0.3);
+  max-width: 500px;
+  width: 100%;
+}
+
+.prompt-title {
+  color: #d63384;
+  font-size: 26px;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-heading {
+  color: #ad1457;
+  font-size: 20px;
+  margin-bottom: 18px;
+  text-align: center;
+}
+
+.form-input,
+.form-textarea {
+  padding: 12px;
+  margin-bottom: 16px;
+  border: 1px solid #ffc1e3;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  border-color: #ec407a;
+}
+
+.form-textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.send-btn {
+  background-color: #ec407a;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.send-btn:hover {
+  background-color: #d81b60;
+}
