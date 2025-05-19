@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import People01 from './Profile.png';
-import './Patients.css'; // <-- CSS file import
+import './Patients.css';
 
 const Patients = () => {
     const [patients, setPatients] = useState([]);
@@ -25,6 +25,10 @@ const Patients = () => {
         navigate("/send-email", { state: { email } });
     };
 
+    const handleAddPatient = () => {
+        navigate("/addpatients");
+    };
+
     const handleSendButton = async (email, patientName, bookingDate) => {
         try {
             const startDate = new Date(bookingDate);
@@ -34,11 +38,11 @@ const Patients = () => {
                 summary: `Meeting with ${patientName}`,
                 description: "Consultation meeting.",
                 start: {
-                    dateTime: startDate,
+                    dateTime: startDate.toISOString(),
                     timeZone: 'Asia/Karachi',
                 },
                 end: {
-                    dateTime: endDate,
+                    dateTime: endDate.toISOString(),
                     timeZone: 'Asia/Karachi',
                 },
                 attendees: [{ email }],
@@ -60,7 +64,13 @@ const Patients = () => {
 
     return (
         <div className="patients-container">
-            <h1 className="title">Patient List</h1>
+            <div className="header-section">
+                <h1 className="title">Patient Management</h1>
+                <button className="add-patient-btn" onClick={handleAddPatient}>
+                    Add New Patient
+                </button>
+            </div>
+            
             <div className="table-wrapper">
                 <table className="patients-table">
                     <thead>
@@ -70,9 +80,8 @@ const Patients = () => {
                             <th>Booking Date</th>
                             <th>Case</th>
                             <th>Fee Status</th>
-                            <th>Email</th>
-                            <th>Write Email</th>
-                            <th>Send Invite</th>
+                            <th>Contact</th>
+                            <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -91,18 +100,32 @@ const Patients = () => {
                                     timeStyle: 'short'
                                 })}</td>
                                 <td>{patient.case}</td>
-                                <td>{patient.feeStatus}</td>
-                                <td>{patient.email}</td>
                                 <td>
-                                    <button className="action-btn" onClick={() => handleRedirect(patient.email)}>Write Mail</button>
+                                    <span className={`status-badge ${patient.feeStatus.toLowerCase()}`}>
+                                        {patient.feeStatus}
+                                    </span>
                                 </td>
                                 <td>
-                                    <button
-                                        className="action-btn"
-                                        onClick={() => handleSendButton(patient.email, patient.name, patient.bookingDate)}
-                                    >
-                                        Send Invite
-                                    </button>
+                                    <div className="contact-info">
+                                        <span className="email">{patient.email}</span>
+                                        {patient.phone && <span className="phone">{patient.phone}</span>}
+                                    </div>
+                                </td>
+                                <td>
+                                    <div className="action-buttons">
+                                        <button 
+                                            className="action-btn email-btn" 
+                                            onClick={() => handleRedirect(patient.email)}
+                                        >
+                                            <i className="icon">✉️</i> Email
+                                        </button>
+                                        <button
+                                            className="action-btn meet-btn"
+                                            onClick={() => handleSendButton(patient.email, patient.name, patient.bookingDate)}
+                                        >
+                                            <i className="icon">🎥</i> Meet
+                                        </button>
+                                    </div>
                                 </td>
                             </tr>
                         ))}
